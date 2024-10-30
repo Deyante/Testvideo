@@ -1,0 +1,108 @@
+package view;
+	
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+
+public class Main extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			
+			Button b1 = new Button("1");
+	        b1.setPrefWidth(50); 
+	        b1.setPrefHeight(50);  
+	        b1.setStyle("-fx-font-size: 16px");
+
+	        Button b2 = new Button("2");
+	        b2.setPrefWidth(50); 
+	        b2.setPrefHeight(50);  
+	        b2.setStyle("-fx-font-size: 16px");
+
+	        Button b3 = new Button("3");
+	        b3.setPrefWidth(50); 
+	        b3.setPrefHeight(50);  
+	        b3.setStyle("-fx-font-size: 16px");
+
+	        Button b4 = new Button("4");
+	        b4.setPrefWidth(50); 
+	        b4.setPrefHeight(50);  
+	        b4.setStyle("-fx-font-size: 16px");
+
+	        Button b5 = new Button("5");
+	        b5.setPrefWidth(50); 
+	        b5.setPrefHeight(50);  
+	        b5.setStyle("-fx-font-size: 16px");
+
+	        Button b6 = new Button("6");
+	        b6.setPrefWidth(50); 
+	        b6.setPrefHeight(50);  
+	        b6.setStyle("-fx-font-size: 16px");
+	        
+	        Button b7 = new Button("7");
+	        b7.setPrefWidth(50); 
+	        b7.setPrefHeight(50);  
+	        b7.setStyle("-fx-font-size: 16px");
+
+	        Button b8 = new Button("8");
+	        b8.setPrefWidth(50); 
+	        b8.setPrefHeight(50);  
+	        b8.setStyle("-fx-font-size: 16px");
+
+	        Button b9 = new Button("9");
+	        b9.setPrefWidth(50); 
+	        b9.setPrefHeight(50);  
+	        b9.setStyle("-fx-font-size: 16px");
+	        
+	        Button bplus = new Button("+");
+	        bplus.setPrefWidth(50); 
+	        bplus.setPrefHeight(50);  
+	        bplus.setStyle("-fx-font-size: 16px");
+	        
+	        Rectangle rectBlanc = new Rectangle(50, 40); // Esthetisme
+	        rectBlanc.setFill(Color.GRAY);
+	        
+			GridPane gridpane = new GridPane();
+		    gridpane.getColumnConstraints().add(new ColumnConstraints(20)); // column 0 is 50 wide, pour que les boutons ne soient pas colles au bord
+
+		    gridpane.setAlignment(Pos.BOTTOM_LEFT);
+		    
+		    GridPane.setConstraints(b1, 2, 1); // column=2 row=2
+		    GridPane.setConstraints(b2, 3, 1);
+		    GridPane.setConstraints(b3, 4, 1);
+		    GridPane.setConstraints(b4, 2, 2);
+		    GridPane.setConstraints(b5, 3, 2);
+		    GridPane.setConstraints(b6, 4, 2);
+		    GridPane.setConstraints(b7, 2, 3);
+		    GridPane.setConstraints(b8, 3, 3);
+		    GridPane.setConstraints(b9, 4, 3);
+		    GridPane.setConstraints(rectBlanc, 2, 4);
+		    GridPane.setConstraints(bplus, 5, 1);
+		    
+		    gridpane.getChildren().addAll(b1,b2,b3,b4,b5,b6,b7,b8,b9,rectBlanc,bplus);
+		    //gridpane.setVgap(5);
+
+		    
+			Scene scene = new Scene(gridpane,450,300);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
